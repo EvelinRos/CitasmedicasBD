@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <a class="Inicio" href='{{ route('welcome') }}'>Inicio</a>
-    <title>Registro</title>
+    <a class="Inicio" href='{{ route('welcome') }}'>Inicio</a> </p>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -105,29 +104,21 @@
         }
 
     </style>
-    <script>
-        function mostrarMensaje() {
-            var nombre = document.getElementById("nombre").value;
-            var apellido = document.getElementById("apellido").value;
-            alert("Bienvenido " + nombre + " " + apellido + ", tu registro fue exitoso. Ahora puedes iniciar sesión.");
-        }
-        function redireccionar() {
-            mostrarMensaje();
-            window.location.href = "login.html"; 
-        }
-    </script>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body>
+
+    @if(session()->has('message'))
+        <div class="alert alert-{{session()->get('color')}} alert-dismissible fade show" role="alert">
+            {{session()->get('message')}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+        </div>
+        @endif
     
     <h1 style="color: white;">Registro Auxiliar Médico</h1>
 
-    @if(session()->has('message'))
-    <div class="alert alert-{{session()->get('color')}} alert-dismissible fade show" role="alert">
-        {{session()->get('message')}}
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
-    </div>
-    @endif
+    
     <form action="{{route('auxiliares.store')}}" method="POST">
         @csrf
        <label for="nombre">Nombre:</label>

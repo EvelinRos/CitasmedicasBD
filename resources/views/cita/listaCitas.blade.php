@@ -179,7 +179,7 @@
       function confirmacionEliminar()
       {
         Swal.fire({
-      title: 'Esta seguro de eliminar la cita?',
+      title: '¿Está seguro de cancelar la cita?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',

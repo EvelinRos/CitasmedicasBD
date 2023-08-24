@@ -38,7 +38,7 @@ class auxiliarController extends Controller
         $auxiliar->telefono = $request->input('telefono');
         $auxiliar->save();
 
-        session()->flash('message', 'Se registró el auxiliar con exito!');
+        session()->flash('message', 'Se registró el auxiliar con éxito!');
         session()->flash('color', 'info');
         return redirect()->back();
     }

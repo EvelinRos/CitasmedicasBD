@@ -45,18 +45,21 @@ Route::delete('/citas/{id}',[citaMedicaController::class,'destroy'])->name('cita
 Route::post('/citas/guardar/{id}',[citaMedicaController::class,'update'])->name('citasMedicas.update');
 
 
-
 Route::get('/gerentes',[gerenteController::class,'index'])->name('gerentes.index');
 Route::post('/gerente',[gerenteController::class,'store'])->name('gerentes.store');
+
+Route::get('/gerente/reporte',[gerenteController::class,'show'])->name('gerentes.show');
+Route::get('/gerente',[gerenteController::class,'reportes'])->name('gerentes.reportes'); 
+
 
 Route::get('/medicos',[medicoController::class,'index'])->name('medicos.index');
 Route::post('/medico',[medicoController::class,'store'])->name('medicos.store');
 Route::get('/medico',[medicoController::class,'horarios'])->name('medicos.horario');
+
+Route::get('/citas',[citaMedicaController::class,'citas'])->name('citasMedicas.citas');
 
 Route::get('/pacientes',[pacienteController::class,'index'])->name('pacientes.index');
 Route::post('/pacientes/store',[pacienteController::class,'store'])->name('pacientes.store');
 
 Route::get('/disponibles',[disponibilidadController::class,'index'])->name('disponibles.index');
 Route::post('/disponible',[disponibilidadController::class,'store'])->name('disponibles.store');
-
-

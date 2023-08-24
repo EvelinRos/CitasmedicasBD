@@ -37,32 +37,43 @@
 
 {{-- TABLA DE INFORMACIÓN --}}
      <div class="container mt-5">
-        <h1 class="text-center mb-4">HORARIO DE MÉDICOS</h1>
+        <h1 class="text-center mb-4"> REPORTE GENERAL DE CITAS MÉDICAS </h1>
         <table class="table table-striped">
           <thead>
             <tr>
-              <th scope="col" style="color: white;">MÉDICO</th>
-              <th scope="col" style="color: white;">HORA ASIGNADA</th>
-              <th scope="col" style="color: white;">FECHA</th>
+            <th scope="col" style="color: white;">ID</th>
+            <th scope="col" style="color: white;">Fecha </th>
+            <th scope="col" style="color: white;">Hora </th>
+            <th scope="col" style="color: white;">Motivo </th>
+            <th scope="col" style="color: white;">Medico Asignado </th>
+            <th scope="col" style="color: white;">Tipo </th>
+            <th scope="col" style="color: white;">Estado </th>
             </tr>
           </thead>
           <tbody>
             @foreach ($citasMedicas as $citas)
+            @if($citas->estado == 'Activo' or $citas->estado == 'Inactivo') 
             <tr>
-                <th scope="row" style="color: white;">{{$citas->medico}}</th>
-                <td style="color: white;">{{$citas->hora}}</td>
+                <th scope="row" style="color: white;">{{$citas->idCitaMedica}}</th>
                 <td style="color: white;">{{$citas->fecha}}</td>
+                <td style="color: white;">{{$citas->hora}}</td>
+                <td style="color: white;">{{$citas->motivo}}</td>
+                <td style="color: white;">{{$citas->medico}}</td>
+                <td style="color: white;">{{$citas->tipoCita}}</td>
+                <td style="color: white;">{{$citas->estado}}</td>
                 <td>
-                </td>
-            </tr>
-            @endforeach
-            <!-- Agrega más filas según sea necesario -->
-          </tbody>
-        </table>
+                </tr>
+              @endif
+              @endforeach
+              <!-- Agrega más filas según sea necesario -->
+            </tbody>
+          </table>
+        </div>
       </div>
 
 {{--Scripts de llamado de librerías--}}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
   </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <a class="Inicio" href='{{ route('welcome') }}'>Inicio</a>
-    <title>Registro</title>
+    <a class="Inicio" href='{{ route('welcome') }}'>Inicio</a> </p>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -123,14 +123,16 @@
 </head>
 
 <body>
-    <h1 style="color: white;">Registro Paciente</h1>
 
     @if(session()->has('message'))
-    <div class="alert alert-{{session()->get('color')}} alert-dismissible fade show" role="alert">
-        {{session()->get('message')}}
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
-    </div>
-    @endif
+        <div class="alert alert-{{session()->get('color')}} alert-dismissible fade show" role="alert">
+            {{session()->get('message')}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+        </div>
+        @endif
+
+    <h1 style="color: white;">Registro Paciente</h1>
+
         <form action="{{route('pacientes.store')}}" method="POST">
             @csrf
         <label for="nombre">Nombre:</label>

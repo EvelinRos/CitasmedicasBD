@@ -2,8 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <a class="Inicio" href='{{ route('welcome') }}'>Inicio</a>
-
+   
     <title>Disponibilidad de horario de trabajo</title>
     <style>
         body {
@@ -143,7 +142,7 @@
 </head>
 <body>
     <div class="posicion">
-        <a class="salir" href="inicio.html">Salir</a>
+        <a class="salir" href='{{ route('welcome') }}'>Salir</a>
     </div>
     <div class="background-container">
         <div class="container">
@@ -181,18 +180,6 @@
                 </div>
             </form>
             <p class="info"> Por favor, seleccione la Disponibilidad de horario adecuada</p>
-            <table class="tabla" id="horariosTable">
-                <thead>
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Hora</th>
-                    </tr>
-                </thead>
-                <tbody id="horariosTableBody">
-                    
-                </tbody>
-            </table>
-        </div>
     </div>
     
 </body>

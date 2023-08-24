@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gerente;
+use App\Models\CitaMedica;
 use Illuminate\Http\Request;
 
 class gerenteController extends Controller
@@ -38,17 +39,23 @@ class gerenteController extends Controller
         $gerente->telefono = $request->input('telefono');
         $gerente->save();
 
-        session()->flash('message', 'Se registró el gerente con exito!');
+        session()->flash('message', 'Se registró el gerente con éxito!');
         session()->flash('color', 'info');
         return redirect()->back();
     }
 
+    public function reportes()
+    {
+        $citasMedicas = CitaMedica::all();
+        return view('gerente.reportecitas',compact('citasMedicas'));
+    }
+    
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        return view('gerente.reporte');
     }
 
     /**

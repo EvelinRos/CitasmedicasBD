@@ -47,6 +47,7 @@ class medicoController extends Controller
         $citasMedicas = CitaMedica::all();
         return view('medico.horarios',compact('citasMedicas'));
     }
+    
     /**
      * Display the specified resource.
      */
