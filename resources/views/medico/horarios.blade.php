@@ -41,7 +41,7 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th scope="col" style="color: white;">MÉDICO</th>
+              <th scope="col" style="color: white;">MEDICO</th>
               <th scope="col" style="color: white;">HORA ASIGNADA</th>
               <th scope="col" style="color: white;">FECHA</th>
             </tr>
@@ -64,5 +64,25 @@
 {{--Scripts de llamado de librerías--}}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+{{--Metodo para confirmación de eliminar--}}
+<script>
+      function confirmacionEliminar()
+      {
+        Swal.fire({
+      title: 'Esta seguro de cancelar la cita?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log("clic");
+        document.getElementById("eliminarForm").submit();
+      }
+    })
+      }
+</script>
   </body>
 </html>

@@ -77,7 +77,7 @@ class citaMedicaController extends Controller
         $cita->tipoCita = $request->input('tipoCita');
         $cita->estado = 'Activo';
         $cita->save();
-        session()->flash('message', 'Se actualizó la cita con éxito!');
+        session()->flash('message', 'Se actualizó la cita con exito!');
         session()->flash('color', 'info');
         return redirect('/');    
     }
@@ -90,7 +90,7 @@ class citaMedicaController extends Controller
         $cita = CitaMedica::findOrFail($id);
         $cita->estado = 'Inactivo';
         $cita->save();
-        session()->flash('message', 'La cita ha sido cancelada.');
+        session()->flash('message', 'La cita ha sido cancelada');
         session()->flash('color', 'danger');
         return redirect('/');
     }

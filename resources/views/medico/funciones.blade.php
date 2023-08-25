@@ -76,8 +76,8 @@
     </div>
     @endif
     <h1>FUNCIONES Y GESTIONES DISPONIBLES</h1>
-    <a href="{{ route('auxiliares.index') }}">REGISTRAR AUXILIAR </a> </p>
-    <a href="{{ route('citasMedicas.citas') }}">CONSULTAR CITAS</a> </p>
-    <a href="{{ route('medicos.horario') }}">VER HORARIOS</a> </p>
+    <a href="{{ route('medicos.index') }}">REGISTRAR MEDICO</a> </p>
+    <a href="{{ route('citasMedicas.lhorario') }}">VISUALIZAR FILTRO CITAS</a> </p>
+    
 </body>
 </html>

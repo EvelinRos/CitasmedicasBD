@@ -2,8 +2,6 @@
 <html>
 <head>
     <meta charset="UTF-8">
-   
-    <title>Disponibilidad de horario de trabajo</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -142,7 +140,7 @@
 </head>
 <body>
     <div class="posicion">
-        <a class="salir" href='{{ route('welcome') }}'>Salir</a>
+        <a class="salir" href='{{ route('welcome') }}'>Inicio</a>
     </div>
     <div class="background-container">
         <div class="container">
@@ -180,6 +178,8 @@
                 </div>
             </form>
             <p class="info"> Por favor, seleccione la Disponibilidad de horario adecuada</p>
+           
+        </div>
     </div>
     
 </body>

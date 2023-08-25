@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Gerente;
 use App\Models\CitaMedica;
+use App\Models\Gerente;
 use Illuminate\Http\Request;
 
 class gerenteController extends Controller
@@ -43,19 +43,18 @@ class gerenteController extends Controller
         session()->flash('color', 'info');
         return redirect()->back();
     }
-
-    public function reportes()
+    public function lreportes()
     {
         $citasMedicas = CitaMedica::all();
-        return view('gerente.reportecitas',compact('citasMedicas'));
+        return view('gerente.listaReporte',compact('citasMedicas'));
     }
-    
+
     /**
      * Display the specified resource.
      */
     public function show()
     {
-        return view('gerente.reporte');
+        return view('gerente.funciones');
     }
 
     /**

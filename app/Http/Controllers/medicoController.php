@@ -47,14 +47,19 @@ class medicoController extends Controller
         $citasMedicas = CitaMedica::all();
         return view('medico.horarios',compact('citasMedicas'));
     }
-    
+    public function lhorario()
+    {
+        $citasMedicas = CitaMedica::all();
+        return view('medico.listaHorario',compact('citasMedicas'));
+    }
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        return view('medico.funciones');
     }
+
 
     /**
      * Show the form for editing the specified resource.

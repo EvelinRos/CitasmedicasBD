@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <a class="Inicio" href='{{ route('welcome') }}'>Inicio</a> </p>
+   
     <style>
         body {
             font-family: Arial, Arial, Helvetica, sans-serif;
@@ -106,17 +107,7 @@
         }
 
     </style>
-    <script>
-        function mostrarMensaje() {
-            var nombre = document.getElementById("nombre").value;
-            var apellido = document.getElementById("apellido").value;
-            alert("Bienvenido " + nombre + " " + apellido + ", tu registro fue exitoso. Ahora puedes iniciar sesión.");
-        }
-        function redireccionar() {
-            mostrarMensaje();
-            window.location.href = "loginm.html";
-        }
-    </script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body>
@@ -127,7 +118,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
         </div>
         @endif
-        
+
     <h1 style="color: white;">Registro Médico</h1>
 
         <form action="{{route('medicos.store')}}" method="POST">

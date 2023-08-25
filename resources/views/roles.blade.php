@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+        <title>Roles</title>
     </head>
     <style>
         body {
@@ -67,15 +67,19 @@
             position: relative; 
         }
     </style>
-    
 <body>
-    <a class="Inicio" href='{{ route('welcome') }}'>Inicio</a> </p>
-
-    <h1> ELIJA EL ROL CON EL QUE DESEA REGISTRARSE </h1>
-    <a href="{{ route('pacientes.index') }}"> PACIENTE </a> </p>
-    <a href="{{ route('medicos.index') }}"> MÉDICO </a> </p>
-    <a href="{{ route('auxiliares.show') }}"> AUXILIAR DE CITAS MÉDICAS </a> </p>
-    <a href="{{ route('gerentes.show') }}"> GERENTE </a> </p>
+    <a class="Inicio" href='{{ route('welcome') }}'>Inicio</a>
+    @if(session()->has('message'))
+    <div class="alert alert-{{session()->get('color')}} alert-dismissible fade show" role="alert">
+        {{session()->get('message')}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+    @endif
+    <h1>ELIJA EL ROL CON EL QUE DESEA REGISTRARSE</h1>
+    <a href="{{ route('pacientes.index') }}">PACIENTE </a> </p>
+    <a href="{{ route('medicos.show') }}">MÉDICO</a> </p>
+    <a href="{{ route('auxiliares.show') }}">AUXILIAR DE CITAS MÉDICAS </a> </p>
+    <a href="{{ route('gerentes.show') }}">GERENTE</a> </p>
 
 </body>
 </html>

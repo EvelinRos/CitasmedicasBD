@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <title>Roles</title>
     </head>
     <style>
         body {
@@ -68,19 +68,16 @@
         }
     </style>
 <body>
-    <a class="Inicio" href='{{ route('welcome') }}'>Inicio</a> </P>
-    
+    <a class="Inicio" href='{{ route('welcome') }}'>Inicio</a>
     @if(session()->has('message'))
     <div class="alert alert-{{session()->get('color')}} alert-dismissible fade show" role="alert">
         {{session()->get('message')}}
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
     </div>
     @endif
-
-    <h1> GESTIONES DISPONIBLES </h1>
-    <a href="{{ route('gerentes.index') }}"> REGISTRAR GERENTE </a> </p>
-    <a href="{{ route('gerentes.reportes') }}"> CONSULTAR REPORTE </a> </p>
-
+    <h1>FUNCIONES Y GESTIONES DISPONIBLES</h1>
+    <a href="{{ route('gerentes.index') }}">REGISTRAR GERENTE</a> </p>
+    <a href="{{ route('citasMedicas.lreportes') }}">VISUALIZAR REPORTE DE CITAS</a> </p>
+    
 </body>
 </html>
-

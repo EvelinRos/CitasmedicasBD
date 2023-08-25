@@ -37,43 +37,59 @@
 
 {{-- TABLA DE INFORMACIÓN --}}
      <div class="container mt-5">
-        <h1 class="text-center mb-4"> REPORTE GENERAL DE CITAS MÉDICAS </h1>
+        <h1 class="text-center mb-4">REPORTE DE CITAS MEDICAS</h1>
         <table class="table table-striped">
           <thead>
             <tr>
-            <th scope="col" style="color: white;">ID</th>
-            <th scope="col" style="color: white;">Fecha </th>
-            <th scope="col" style="color: white;">Hora </th>
-            <th scope="col" style="color: white;">Motivo </th>
-            <th scope="col" style="color: white;">Medico Asignado </th>
-            <th scope="col" style="color: white;">Tipo </th>
-            <th scope="col" style="color: white;">Estado </th>
+                <th scope="col" style="color: white;">ID</th>
+                <th scope="col" style="color: white;">Fecha</th>
+                <th scope="col" style="color: white;">Hora</th>
+                <th scope="col" style="color: white;">Motivo</th>
+                <th scope="col" style="color: white;">Medico Asignado</th>
+                <th scope="col" style="color: white;">Tipo</th>
+                <th scope="col" style="color: white;">Estado</th>
             </tr>
           </thead>
           <tbody>
             @foreach ($citasMedicas as $citas)
-            @if($citas->estado == 'Activo' or $citas->estado == 'Inactivo') 
             <tr>
-                <th scope="row" style="color: white;">{{$citas->idCitaMedica}}</th>
-                <td style="color: white;">{{$citas->fecha}}</td>
-                <td style="color: white;">{{$citas->hora}}</td>
-                <td style="color: white;">{{$citas->motivo}}</td>
-                <td style="color: white;">{{$citas->medico}}</td>
-                <td style="color: white;">{{$citas->tipoCita}}</td>
-                <td style="color: white;">{{$citas->estado}}</td>
-                <td>
-                </tr>
-              @endif
-              @endforeach
-              <!-- Agrega más filas según sea necesario -->
-            </tbody>
-          </table>
-        </div>
+                  <th scope="row" style="color: white;">{{$citas->idCitaMedica}}</th>
+                  <td style="color: white;">{{$citas->fecha}}</td>
+                  <td style="color: white;">{{$citas->hora}}</td>
+                  <td style="color: white;">{{$citas->motivo}}</td>
+                  <td style="color: white;">{{$citas->medico}}</td>
+                  <td style="color: white;">{{$citas->tipoCita}}</td>
+                  <td style="color: white;">{{$citas->estado}}</td>
+                </td>
+            </tr>
+            @endforeach
+            <!-- Agrega más filas según sea necesario -->
+          </tbody>
+        </table>
       </div>
 
 {{--Scripts de llamado de librerías--}}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+{{--Metodo para confirmación de eliminar--}}
+<script>
+      function confirmacionEliminar()
+      {
+        Swal.fire({
+      title: 'Esta seguro de cancelar la cita?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log("clic");
+        document.getElementById("eliminarForm").submit();
+      }
+    })
+      }
+</script>
   </body>
 </html>

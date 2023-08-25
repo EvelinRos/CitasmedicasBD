@@ -35,17 +35,17 @@
     </div>
   </nav>
     <div class="form-group text-center">
-      <h5 style="color: white;">ESTADO DE LAS CITAS</h5>
+      <h5 style="color: white;">ESTADO DE LA CITA</h5>
       <select class="form-control" name="" id="tipo">
       <option value="">Seleccione el estado</option>
-      <option value="1"> CITA AGENDADA</option>
-      <option value="0">CITA CANCELADA</option>
+      <option value="1">CITAS AGENDADAS</option>
+      <option value="0">CITAS CANCELADAS</option>
      </select>
     </div>
 {{-- TABLA DE INFORMACIÓN CITAS ACTIVAS--}}
   <div id="activos" style="display: none">
      <div class="container mt-5">
-        <h1 class="text-center mb-4">LISTA DE CITAS ACTIVAS</h1>
+        <h1 class="text-center mb-4">LISTA DE CITAS AGENDADAS</h1>
         <table class="table table-striped">
           <thead>
             <tr>
@@ -140,7 +140,7 @@
 <div id="inactivos" style="display: none">
   {{-- TABLA DE INFORMACIÓN CITAS ACTIVAS--}}
        <div class="container mt-5">
-          <h1 class="text-center mb-4">LISTA DE CITAS INACTIVAS</h1>
+          <h1 class="text-center mb-4">LISTA DE CITAS CANCELADAS</h1>
           <table class="table table-striped">
             <thead>
               <tr>
@@ -179,7 +179,7 @@
       function confirmacionEliminar()
       {
         Swal.fire({
-      title: '¿Está seguro de cancelar la cita?',
+      title: 'Esta seguro de cancelar la cita?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
